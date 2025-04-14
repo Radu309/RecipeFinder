@@ -14,7 +14,9 @@ A cross-platform mobile app built with React Native, Expo Router that helps user
 ### 1. Clone the Repository
 
 git clone https://github.com/Radu309/RecipeFinder.git
+
 cd RecipeFinder
+
 
 ### 2. Install Dependencies
 
@@ -22,11 +24,20 @@ npm install
 # or
 yarn
 
+
 ### 3. Install Expo CLI (if not already installed)
 
 npm install -g expo-cli
 
-### 4. Start the Project
+
+### 4. Add a .env file in root. In .env file, put the next:
+
+EXPO_PUBLIC_OPENROUTER_API_KEY = YOUR_OPENROUTER_KEY
+
+EXPO_PUBLIC_PEXELS_API_KEY = YOUR_PEXELS_KEY
+
+
+### 5. Start the Project
 
 -- for mobile:  
 npx expo start
@@ -36,6 +47,7 @@ npx expo start --web
 
 Use Expo Go on your phone (recommanded) or an emulator to preview the app.
 
+
 ## Requirements
 
 - Node.js
@@ -43,6 +55,7 @@ Use Expo Go on your phone (recommanded) or an emulator to preview the app.
 - Expo CLI
 - Mobile device with Expo Go or a local emulator
 - Code editor (e.g. VSC)
+
 
 ## Project Structure
 
