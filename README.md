@@ -28,10 +28,10 @@ npm install -g expo-cli
 
 ### 4. Start the Project
 
--- for mobile
+-- for mobile:  
 npx expo start
 
--- for web
+-- for web:  
 npx expo start --web
 
 Use Expo Go on your phone (recommanded) or an emulator to preview the app.
@@ -48,8 +48,13 @@ Use Expo Go on your phone (recommanded) or an emulator to preview the app.
 
 .
 ├── app/                   # App routes (Expo Router)
+
 ├── components/            # UI components
+
 ├── hooks/                 # Reusable logic for states, effects, or data
+
 ├── services/              # API integrations
+
 ├── types/                 # TypeScript definitions
+
 ├── utils/                 # Local storage, helpers
