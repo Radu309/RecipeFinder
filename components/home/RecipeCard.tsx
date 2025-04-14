@@ -1,19 +1,40 @@
-import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { Recipe } from '../types/recipe';
-import { isFavorite } from '../utils/favoritesStorage';
+import { Recipe } from '../../types/recipe';
+import { isFavorite } from '../../utils/favoritesStorage';
+import React, { useState, useEffect } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 
 
-type Props = { recipe: Recipe;};
 
-export default function RecipeCard({ recipe }: Props){
+type Props = { 
+  recipe: Recipe;
+  onToggleFavorite: (recipe: Recipe) => void;
+};
+
+export default function RecipeCard({ recipe, onToggleFavorite }: Props){
   const router = useRouter();
+  const [isFav, setIsFav] = useState(false);
+
+  useFocusEffect(
+    React.useCallback(() => {
+    const checkFav = async () => {
+      const fav = await isFavorite(recipe.id);
+      setIsFav(fav);
+    };
+    checkFav();
+  }, []));
+
+  const handleFavoriteToggle = () => {
+    setIsFav((prev) => !prev);      
+    onToggleFavorite(recipe);
+  };
+  
 
   const handlePress = () => {
     router.push({
-      pathname: '/RecipeDetails',
+      pathname: '/recipe-details',
       params: {
         id: recipe.id,
         title: recipe.title,
@@ -21,7 +42,6 @@ export default function RecipeCard({ recipe }: Props){
         image: recipe.image || '',
         ingredients: JSON.stringify(recipe.ingredients),
         instructions: JSON.stringify(recipe.instructions),
-        favorite: false
       },
     });
   };
@@ -43,9 +63,12 @@ export default function RecipeCard({ recipe }: Props){
         <Text style={styles.cardTitle}>{recipe.title}</Text>
         <Text style={styles.cardTime}>{recipe.duration}</Text>
       </View>
-      <TouchableOpacity>
-        {/* <Ionicons name="heart" size={24} color="#6A4C93" /> */}
-        <Ionicons name="heart-outline" size={24} color="black" />
+      <TouchableOpacity onPress={handleFavoriteToggle}>
+        <Ionicons
+          name={isFav ? "heart" : "heart-outline"}
+          size={24}
+          color={isFav ? "#6A4C93" : "black"}
+        />
       </TouchableOpacity>
     </TouchableOpacity>
   );

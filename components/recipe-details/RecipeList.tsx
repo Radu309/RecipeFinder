@@ -1,15 +1,15 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
-import { Recipe } from '../types/recipe';
-import RecipeCard from './RecipeCard';
+import { Recipe } from '../../types/recipe';
+import RecipeCard from '../home/RecipeCard';
 
 
 interface RecipeListProps {
   recipes: Recipe[];
-  onItemPress?: (recipe: Recipe) => void;
+  onToggleFavorite: (recipe: Recipe) => void;
 }
 
-const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
+const RecipeList: React.FC<RecipeListProps> = ({ recipes, onToggleFavorite }) => {
   return (
       <FlatList
         data={recipes}
@@ -17,8 +17,7 @@ const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.list}
         renderItem={({ item }) => (
-          <RecipeCard recipe={item}
-          />
+          <RecipeCard recipe={item} onToggleFavorite={onToggleFavorite} />
         )}
       />
   );

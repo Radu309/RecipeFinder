@@ -5,5 +5,4 @@ export type Recipe = {
   image: string | null;
   ingredients: string[];
   instructions: string[];
-  favorite: boolean;
 };

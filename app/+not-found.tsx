@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function NotFound() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>404 - Page not found 😢</Text>
+      <Text style={styles.text}>404 - Page not found </Text>
     </View>
   );
 }
