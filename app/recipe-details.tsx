@@ -53,8 +53,8 @@ export default function RecipeDetailsScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FAFAFA', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' },
-  layout: { flex: 1, padding: 16 },
-  layoutPhone: { width: 500, flexDirection: 'column', maxWidth: '70%', maxHeight: '90%', alignSelf: 'center' },
+  layout: { flex: 1, padding: 20 },
+  layoutPhone: { width: 500, flexDirection: 'column', maxWidth: '90%', maxHeight: '90%', alignSelf: 'center' },
   layoutTablet: { flexDirection: 'row', maxWidth: '80%', maxHeight: '90%', gap: 24 },
   leftPhone: { width: '100%' },
   leftTablet: { flex: 1, paddingRight: 16 },

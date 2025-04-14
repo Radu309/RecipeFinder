@@ -1,50 +1,55 @@
-# Welcome to your Expo app 👋
+# AI Recipe App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform mobile app built with React Native, Expo Router that helps users discover AI-generated recipes with images and easy-to-follow instructions.
 
-## Get started
+### RESULTS: 
 
-1. Install dependencies
+![Home Page - Favorites View](assets/HomePageSS.png)
+![Search Results - Suggested Recipes](assets/SearchResultsSS.png)
+![Recipe Details - Mobile View](assets/Details-PhoneSS.png)
+![Recipe Details - Tablet View](assets/Details-TabletSS.png)
 
-   ```bash
-   npm install
-   ```
+### ### Follow these steps to run the project locally:
 
-2. Start the app
+### 1. Clone the Repository
 
-   ```bash
-    npx expo start
-   ```
+git clone https://github.com/Radu309/RecipeFinder.git
+cd RecipeFinder
 
-In the output, you'll find options to open the app in a
+### 2. Install Dependencies
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+npm install
+# or
+yarn
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 3. Install Expo CLI (if not already installed)
 
-## Get a fresh project
+npm install -g expo-cli
 
-When you're ready, run:
+### 4. Start the Project
 
-```bash
-npm run reset-project
-```
+-- for mobile
+npx expo start
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+-- for web
+npx expo start --web
 
-## Learn more
+Use Expo Go on your phone (recommanded) or an emulator to preview the app.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Requirements
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Node.js
+- Git
+- Expo CLI
+- Mobile device with Expo Go or a local emulator
+- Code editor (e.g. VSC)
 
-## Join the community
+## Project Structure
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+.
+├── app/                   # App routes (Expo Router)
+├── components/            # UI components
+├── hooks/                 # Reusable logic for states, effects, or data
+├── services/              # API integrations
+├── types/                 # TypeScript definitions
+├── utils/                 # Local storage, helpers
