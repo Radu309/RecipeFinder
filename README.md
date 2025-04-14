@@ -47,6 +47,7 @@ Use Expo Go on your phone (recommanded) or an emulator to preview the app.
 ## Project Structure
 
 .
+
 ├── app/                   # App routes (Expo Router)
 
 ├── components/            # UI components
